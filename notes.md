@@ -27,3 +27,15 @@
     a small database with low management.
 
 # learning_log (STARTAPP NAME)
+    # models.py
+    * Defines the data we want to manage in our app.
+    * A model tells Django how to work with the data that will be stored in the app. 
+    
+    Attributes for Models (module)
+        CharField - a piece of data that's made up of characters or text. To store a small amount of text.
+        ex: Name, Title, City, etc. When it is defined we tell Django how many characters make up the CharField.
+        code ex: "text = models.CharField(maxLength=200)"
+
+        DateTimeField, piece of data that will record a data and a time. Passing the argument auto_now_add=True,
+        which tells Django to AUTOMATICALLY set this attribute to the current DATE and TIME whenever the user creates a new topic NOW.
+        code ex: "date_added = models.DateTimeField(auto_now_add=True)" 
