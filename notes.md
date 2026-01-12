@@ -14,6 +14,13 @@
     * Try a different port number by entering this command: "python manage.py runserver 8001",
     which will go ahead and run a server or port 8001.
 
+    # settings.py
+    Settings about overall project. Has settings regarding all apps, security, keys,
+    databases, time zone, language, etc.
+
+    In the list of Installed apps, we added our model which is under the file 'learning_logs', so we added a brief section above the default apps
+    to distinguish the difference between the two.
+
     # wsgi.py
     web server gateway interface
     * Helps Django serve the files it creates
