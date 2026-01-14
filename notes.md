@@ -14,6 +14,10 @@
         * Port 8000 is your computers local host. Referring to a server that only processes requests on
         your system.
 
+            Errors connecting to server:
+            * Try a different port number by entering this command: "python manage.py runserver 8001",
+            which will go ahead and run a server or port 8001.
+
         Activating Models / Modifying Models (Terminal): 
         * Follow these steps to either activate or modify the models you've created. Make migrations and then migrate. 
         1. "python manage.py makemigrations filename_logs"
@@ -22,9 +26,9 @@
         called '0001_initial.py'. This migration creates a table for the model Topic in the database.
         * migrate: applies the migration and has Django modify the database. Confirming it the migration worked for the file name.
 
-        Errors connecting to server:
-        * Try a different port number by entering this command: "python manage.py runserver 8001",
-        which will go ahead and run a server or port 8001.
+            Errors activating entry/making migrations:
+            * Verify models.py doesn't have any wrong syntax.
+            * Verify terminal syntax.
 
         Creating a Superuser (Terminal): "python manage.py createsuperuser"
         * To effectively run a website you need an administrator to handle sensitive and background information. There are administrators that do that and 
@@ -36,6 +40,7 @@
         *Passwords are stored in a string derived from the password as a hash.
             hash - is a function that changes data using an algorithm to a fixed-length output
             ex: hash("dog") → cd6357efdd966de8c0cb2f876cc89ec74ce35f0968e11743987084bd42fb8944
+            
 
     # settings.py
         Settings about overall project. Has settings regarding all apps, security, keys,
@@ -69,10 +74,21 @@
             DateTimeField, piece of data that will record a data and a time. Passing the argument auto_now_add=True,
             which tells Django to AUTOMATICALLY set this attribute to the current DATE and TIME whenever the user creates a new topic NOW.
             code ex: "date_added = models.DateTimeField(auto_now_add=True)"
-    
+
+            models.ForeignKey(Topic,on_delete=models.CASCADE) - A foreign key: database term that references another record in the database.
+            Connecting each key entry to a specific topic assigning a key / ID to a topic. The 'on_delete=models.CASCADE' tells
+            Django when a topic is deleted that anything associated with it will be deleted as well. --> cascading delete.
+
+
+
     # admin.py
         * Register models to the admin site.
 
         Attributes to Register Models (module)
             admin.site.register(MODEL_NAME) - manage the model through the admin site
-
+        
+        *Anytime we activate a model we follow these steps:
+            1. Create / Modify Model
+            2. Make Migrations to 'app_name'
+            3. Migrate the change.
+            4. Register Entry to Admin site in admin.py
