@@ -2,7 +2,18 @@
     * Created one year after I was born - 2003. 
     * Free and open-source Python web framework that runs on a web server.
 
-# learning_log (PROJECT NAME)
+    # Starting a new Project using the Terminal
+        1. Creating the Project: 'django-admin startproject learning_log .'
+            * Don't forget to add the dot at the end.
+
+        2. Creating the Database: 'python manage.py migrate'
+            * Django stores most of the data/information in a database so that is next. 
+
+        3. Viewing the Project: 'python manage.py runserver'
+            * Look at #manage.py for more details.
+# learning_log (PROJECT FOLDER)
+    * Holds contents of the project, knows about the apps, and handles global and routing.
+
     # manage.py
 
         Viewing the Project (Terminal): "python manage.py runserver"
@@ -56,12 +67,16 @@
     # urls.py
         uniform resource locator: address of something on the internet
         * Tells Django which pages to build in response to browser requests
+        * This file is used to manage URLs for the admin site
+        * Represents the project as a whole
 
     # db.sqlite3
         SQLite is a database that runs off a single file. Ideal for writing simple apps that manage 
         a small database with low management.
 
-# learning_logs (STARTAPP NAME)
+# learning_logs (STARTAPP NAME, ONE OF MANY APP FOLDERS)
+    * A feature / model
+    
     # models.py
         * Defines the data we want to manage in our app.
         * A model tells Django how to work with the data that will be stored in the app. 
@@ -79,8 +94,6 @@
             Connecting each key entry to a specific topic assigning a key / ID to a topic. The 'on_delete=models.CASCADE' tells
             Django when a topic is deleted that anything associated with it will be deleted as well. --> cascading delete.
 
-
-
     # admin.py
         * Register models to the admin site.
 
@@ -92,3 +105,17 @@
             2. Make Migrations to 'app_name'
             3. Migrate the change.
             4. Register Entry to Admin site in admin.py
+
+    # urls.py
+        * Defines URL Patterns for learning_logs
+        * We define URL pattern for the index / homepage for the project.
+
+        Attributes for Path (module):
+            path('', views.index, name='index')
+
+                Takes three arguments:
+                1. String that Django routes the current request properly.
+                2. Specifies which function to call in views.py
+                3. Provides the name index for the URL pattern to refer in other code sections.
+# The Django API
+    # Website to understand Queries: https://docs.djangoproject.com/en/6.0/topics/db/queries/
