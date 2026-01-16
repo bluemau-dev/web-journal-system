@@ -76,7 +76,7 @@
 
 # learning_logs (STARTAPP NAME, ONE OF MANY APP FOLDERS)
     * A feature / model
-    
+
     # models.py
         * Defines the data we want to manage in our app.
         * A model tells Django how to work with the data that will be stored in the app. 
@@ -117,5 +117,10 @@
                 1. String that Django routes the current request properly.
                 2. Specifies which function to call in views.py
                 3. Provides the name index for the URL pattern to refer in other code sections.
+
+        Errors you may come across: File "/usr/local/python/3.12.1/lib/python3.12/site-packages/django/urls/resolvers.py", line 739, in url_patterns
+        raise ImproperlyConfigured(msg.format(name=self.urlconf_name)) from e django.core.exceptions.ImproperlyConfigured: The included URLconf '<module 'learning_logs.urls' from '/workspaces/web-journal-system/learning_logs/urls.py'>' does not appear to have any patterns in it. If you see the 'urlpatterns' variable with valid patterns in the file then the issue is probably caused by a circular import.
+
+            How I fixed it: Incorrect syntax in file name '/learning_logs/urls.py'. Just keep an eye out on syntax.
 # The Django API
     # Website to understand Queries: https://docs.djangoproject.com/en/6.0/topics/db/queries/
