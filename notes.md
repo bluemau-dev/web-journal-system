@@ -124,3 +124,4 @@
             How I fixed it: Incorrect syntax in file name '/learning_logs/urls.py'. Just keep an eye out on syntax.
 # The Django API
     # Website to understand Queries: https://docs.djangoproject.com/en/6.0/topics/db/queries/
+    # Website to undernstand Models: https://docs.djangoproject.com/en/6.0/ref/models/fields/
